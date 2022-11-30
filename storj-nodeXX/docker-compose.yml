@@ -21,6 +21,7 @@ services:
     volumes:
       - "${NODE_MNT}:/app/config"
       - "${NODE_IDENTITY}:/app/identity"
+      - "./storj-node/config.yaml:/app/config/config.yaml"
       - "./storj-node/nodelog:/etc/logrotate.d/nodelog"
 
   watchtower:
