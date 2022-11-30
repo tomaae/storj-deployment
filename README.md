@@ -3,6 +3,7 @@ Full compose multinode deployment for storj-node with exporters and grafana.
 
 ## Per node compose deployment
 * storj-node with log to file
+* preconfigured zksync
 * logrotate for storj-node
 * storj exporter
 * storj log exporter
