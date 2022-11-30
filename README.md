@@ -117,5 +117,5 @@ docker compose up -d
 
 Import grafana dashboard:
 
-https://github.com/tomaae/storj-deployment/storj-ui/dashboard_exporter_combined.json
+https://raw.githubusercontent.com/tomaae/storj-deployment/main/storj-ui/dashboard_exporter_combined.json
 
