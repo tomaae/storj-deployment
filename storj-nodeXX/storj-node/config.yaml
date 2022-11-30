@@ -1,0 +1,308 @@
+# how frequently bandwidth usage rollups are calculated
+# bandwidth.interval: 1h0m0s
+
+# how frequently expired pieces are collected
+# collector.interval: 1h0m0s
+
+# use color in user interface
+# color: false
+
+# server address of the api gateway and frontend app
+console.address: :14002
+
+# path to static resources
+# console.static-dir: ""
+
+# the public address of the node, useful for nodes behind NAT
+contact.external-address: ""
+
+# how frequently the node contact chore should run
+# contact.interval: 1h0m0s
+
+# Maximum Database Connection Lifetime, -1ns means the stdlib default
+# db.conn_max_lifetime: 30m0s
+
+# Maximum Amount of Idle Database connections, -1 means the stdlib default
+# db.max_idle_conns: 1
+
+# Maximum Amount of Open Database connections, -1 means the stdlib default
+# db.max_open_conns: 5
+
+# address to listen on for debug endpoints
+# debug.addr: 127.0.0.1:0
+
+# expose control panel
+# debug.control: false
+
+# If set, a path to write a process trace SVG to
+# debug.trace-out: ""
+
+# open config in default editor
+# edit-conf: false
+
+# in-memory buffer for uploads
+# filestore.write-buffer-size: 128.0 KiB
+
+# how often to run the chore to check for satellites for the node to exit.
+# graceful-exit.chore-interval: 1m0s
+
+# the minimum acceptable bytes that an exiting node can transfer per second to the new node
+# graceful-exit.min-bytes-per-second: 5.00 KB
+
+# the minimum duration for downloading a piece from storage nodes before timing out
+# graceful-exit.min-download-timeout: 2m0s
+
+# number of concurrent transfers per graceful exit worker
+# graceful-exit.num-concurrent-transfers: 5
+
+# number of workers to handle satellite exits
+# graceful-exit.num-workers: 4
+
+# Enable additional details about the satellite connections via the HTTP healthcheck.
+healthcheck.details: false
+
+# Provide health endpoint (including suspension/audit failures) on main public port, but HTTP protocol.
+healthcheck.enabled: true
+
+# path to the certificate chain for this identity
+identity.cert-path: identity/identity.cert
+
+# path to the private key for this identity
+identity.key-path: identity/identity.key
+
+# if true, log function filename and line number
+# log.caller: false
+
+# if true, set logging to development mode
+# log.development: false
+
+# configures log encoding. can either be 'console', 'json', 'pretty', or 'gcloudlogging'.
+# log.encoding: ""
+
+# the minimum log level to log
+log.level: info
+
+# can be stdout, stderr, or a filename
+log.output: "/app/config/node.log"
+
+# if true, log stack traces
+# log.stack: false
+
+# address(es) to send telemetry to (comma-separated)
+# metrics.addr: collectora.storj.io:9000
+
+# application name for telemetry identification. Ignored for certain applications.
+# metrics.app: storagenode
+
+# application suffix. Ignored for certain applications.
+metrics.app-suffix: -alpha
+
+# address(es) to send telemetry to (comma-separated)
+# metrics.event-addr: eventkitd.datasci.storj.io:9002
+
+# instance id prefix
+# metrics.instance-prefix: ""
+
+# how frequently to send up telemetry. Ignored for certain applications.
+metrics.interval: 30m0s
+
+# maximum duration to wait before requesting data
+# nodestats.max-sleep: 5m0s
+
+# how often to sync reputation
+# nodestats.reputation-sync: 4h0m0s
+
+# how often to sync storage
+# nodestats.storage-sync: 12h0m0s
+
+# operator email address
+operator.email: ""
+
+# operator wallet address
+operator.wallet: ""
+
+# operator wallet features
+operator.wallet-features: ["zksync"]
+
+# move pieces to trash upon deletion. Warning: if set to false, you risk disqualification for failed audits if a satellite database is restored from backup.
+# pieces.delete-to-trash: true
+
+# file preallocated for uploading
+# pieces.write-prealloc-size: 4.0 MiB
+
+# whether or not preflight check for database is enabled.
+# preflight.database-check: true
+
+# whether or not preflight check for local system clock is enabled on the satellite side. When disabling this feature, your storagenode may not setup correctly.
+# preflight.local-time-check: true
+
+# how many concurrent retain requests can be processed at the same time.
+# retain.concurrency: 5
+
+# allows for small differences in the satellite and storagenode clocks
+# retain.max-time-skew: 72h0m0s
+
+# allows configuration to enable, disable, or test retain requests from the satellite. Options: (disabled/enabled/debug)
+# retain.status: enabled
+
+# public address to listen on
+server.address: :28967
+
+# if true, client leaves may contain the most recent certificate revocation for the current certificate
+# server.extensions.revocation: true
+
+# if true, client leaves must contain a valid "signed certificate extension" (NB: verified against certs in the peer ca whitelist; i.e. if true, a whitelist must be provided)
+# server.extensions.whitelist-signed-leaf: false
+
+# path to the CA cert whitelist (peer identities must be signed by one these to be verified). this will override the default peer whitelist
+# server.peer-ca-whitelist-path: ""
+
+# identity version(s) the server will be allowed to talk to
+# server.peer-id-versions: latest
+
+# private address to listen on
+server.private-address: 127.0.0.1:7778
+
+# url for revocation database (e.g. bolt://some.db OR redis://127.0.0.1:6378?db=2&password=abc123)
+# server.revocation-dburl: bolt://config/revocations.db
+
+# if true, uses peer ca whitelist checking
+# server.use-peer-ca-whitelist: true
+
+# total allocated bandwidth in bytes (deprecated)
+storage.allocated-bandwidth: 0 B
+
+# total allocated disk space in bytes
+storage.allocated-disk-space: 2.00 TB
+
+# how frequently Kademlia bucket should be refreshed with node stats
+# storage.k-bucket-refresh-interval: 1h0m0s
+
+# path to store data in
+# storage.path: config/storage
+
+# a comma-separated list of approved satellite node urls (unused)
+# storage.whitelisted-satellites: ""
+
+# how often the space used cache is synced to persistent storage
+# storage2.cache-sync-interval: 1h0m0s
+
+# directory to store databases. if empty, uses data path
+# storage2.database-dir: ""
+
+# size of the piece delete queue
+# storage2.delete-queue-size: 10000
+
+# how many piece delete workers
+# storage2.delete-workers: 1
+
+# how soon before expiration date should things be considered expired
+# storage2.expiration-grace-period: 48h0m0s
+
+# how many concurrent requests are allowed, before uploads are rejected. 0 represents unlimited.
+# storage2.max-concurrent-requests: 0
+
+# amount of memory allowed for used serials store - once surpassed, serials will be dropped at random
+# storage2.max-used-serials-size: 1.00 MB
+
+# a client upload speed should not be lower than MinUploadSpeed in bytes-per-second (E.g: 1Mb), otherwise, it will be flagged as slow-connection and potentially be closed
+# storage2.min-upload-speed: 0 B
+
+# if the portion defined by the total number of alive connection per MaxConcurrentRequest reaches this threshold, a slow upload client will no longer be monitored and flagged
+# storage2.min-upload-speed-congestion-threshold: 0.8
+
+# if MinUploadSpeed is configured, after a period of time after the client initiated the upload, the server will flag unusually slow upload client
+# storage2.min-upload-speed-grace-duration: 10s
+
+# how frequently Kademlia bucket should be refreshed with node stats
+# storage2.monitor.interval: 1h0m0s
+
+# how much bandwidth a node at minimum has to advertise (deprecated)
+# storage2.monitor.minimum-bandwidth: 0 B
+
+# how much disk space a node at minimum has to advertise
+# storage2.monitor.minimum-disk-space: 500.00 GB
+
+# how frequently to verify the location and readability of the storage directory
+# storage2.monitor.verify-dir-readable-interval: 1m0s
+
+# how frequently to verify writability of storage directory
+# storage2.monitor.verify-dir-writable-interval: 5m0s
+
+# how long after OrderLimit creation date are OrderLimits no longer accepted
+# storage2.order-limit-grace-period: 1h0m0s
+
+# length of time to archive orders before deletion
+# storage2.orders.archive-ttl: 168h0m0s
+
+# duration between archive cleanups
+# storage2.orders.cleanup-interval: 5m0s
+
+# maximum duration to wait before trying to send orders
+# storage2.orders.max-sleep: 30s
+
+# path to store order limit files in
+# storage2.orders.path: config/orders
+
+# timeout for dialing satellite during sending orders
+# storage2.orders.sender-dial-timeout: 1m0s
+
+# duration between sending
+# storage2.orders.sender-interval: 1h0m0s
+
+# timeout for sending
+# storage2.orders.sender-timeout: 1h0m0s
+
+# if set to true, all pieces disk usage is recalculated on startup
+# storage2.piece-scan-on-startup: true
+
+# allows for small differences in the satellite and storagenode clocks
+# storage2.retain-time-buffer: 48h0m0s
+
+# how long to spend waiting for a stream operation before canceling
+# storage2.stream-operation-timeout: 30m0s
+
+# file path where trust lists should be cached
+# storage2.trust.cache-path: config/trust-cache.json
+
+# list of trust exclusions
+# storage2.trust.exclusions: ""
+
+# how often the trust pool should be refreshed
+# storage2.trust.refresh-interval: 6h0m0s
+
+# list of trust sources
+# storage2.trust.sources: https://www.storj.io/dcs-satellites
+
+# address for jaeger agent
+# tracing.agent-addr: agent.tracing.datasci.storj.io:5775
+
+# application name for tracing identification
+# tracing.app: storagenode
+
+# application suffix
+# tracing.app-suffix: -release
+
+# buffer size for collector batch packet size
+# tracing.buffer-size: 0
+
+# whether tracing collector is enabled
+# tracing.enabled: true
+
+# how frequently to flush traces to tracing agent
+# tracing.interval: 0s
+
+# buffer size for collector queue size
+# tracing.queue-size: 0
+
+# how frequent to sample traces
+# tracing.sample: 0
+
+# Interval to check the version
+# version.check-interval: 15m0s
+
+# Request timeout for version checks
+# version.request-timeout: 1m0s
+
+# server address to check its version against
+version.server-address: https://version.storj.io
