@@ -65,6 +65,7 @@ docker run --rm -e SETUP="true" \
 ## Deploy storj node
 Prepare compose
 ```
+rm /mnt/node01/config.yaml
 cp -r storj-nodeXX storj-node01
 sed -i 's/XX/01/g' ./storj-node01/.env
 ```
