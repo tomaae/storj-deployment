@@ -1,0 +1,72 @@
+version: "3.6"
+services:
+  storj-node:
+    container_name: "storj-node${NODE_ID}"
+    environment:
+      - "EMAIL=${NODE_EMAIL}"
+      - "ADDRESS=${NODE_EXTERNAL}"
+      - "STORAGE=${NODE_STORAGE}"
+      - "WALLET=${NODE_WALLET}"
+      - "SETUP=false"
+      - "AUTO_UPDATE=true"
+    image: "storjlabs/storagenode:latest"
+    networks:
+      - "storj-bridge"
+    ports:
+      - "140${NODE_ID}:14002/tcp"
+      - "150${NODE_ID}:28967/tcp"
+      - "150${NODE_ID}:28967/udp"
+    restart: "unless-stopped"
+    user: "0:0"
+    volumes:
+      - "${NODE_MNT}:/app/config"
+      - "${NODE_IDENTITY}:/app/identity"
+      - "./storj-node/nodelog:/etc/logrotate.d/nodelog"
+
+  watchtower:
+    container_name: "storj-watchtower${NODE_ID}"
+    image: "storjlabs/watchtower:latest"
+    networks:
+      - "storj-bridge"
+    command:
+      - "storj-watchtower${NODE_ID}"
+      - "storj-node${NODE_ID}"
+      - "--stop-timeout"
+      - "300s"
+    restart: "unless-stopped"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+
+  storj-exporter:
+    depends_on:
+      - storj-node
+    container_name: "storj-exporter${NODE_ID}"
+    environment:
+      - "STORJ_HOST_ADDRESS=storj-node${NODE_ID}"
+    image: "anclrii/storj-exporter:latest"
+    networks:
+      - "storj-bridge"
+    ports:
+      - "96${NODE_ID}:9651/tcp"
+    restart: "unless-stopped"
+
+  storj-log-exporter:
+    depends_on:
+      - storj-node
+    command:
+      - "-config"
+      - "/app/config.yml"
+    container_name: "storj-log-exporter${NODE_ID}"
+    image: "storj-log-exporter:latest"
+    networks:
+      - "storj-bridge"
+    ports:
+      - "97${NODE_ID}:9144/tcp"
+    restart: "unless-stopped"
+    user: "1000:1000"
+    volumes:
+      - "${NODE_MNT}:/app/logs"
+
+networks:
+  storj-bridge:
+    name: "storj-bridge"
