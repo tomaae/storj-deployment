@@ -1,6 +1,13 @@
 # storj-deployment
 Full compose multinode deployment for storj-node with exporters and grafana.
 
+## Deployment example
+![image](https://user-images.githubusercontent.com/23486452/204962205-8b505289-96b8-4e36-96ee-efa6da232a6b.png)
+![image](https://user-images.githubusercontent.com/23486452/204962751-053a1569-d5f5-46c5-ba09-adae46478fa6.png)
+![image](https://user-images.githubusercontent.com/23486452/204962782-7c99ee01-1c15-4b78-b339-d2b60f52e05a.png)
+![image](https://user-images.githubusercontent.com/23486452/204962666-96150bbc-0f1c-453e-9387-06a6ad298973.png)
+
+
 ## Per node compose deployment
 * storj-node with log to file
 * preconfigured zksync
