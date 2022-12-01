@@ -33,6 +33,7 @@ https://github.com/kevinkk525/storj-log-exporter
 
 ## Build storj-log-exporter docker image
 ```
+cd ~
 git clone https://github.com/kevinkk525/storj-log-exporter
 cd storj-log-exporter
 sudo docker build -t storj-log-exporter .
@@ -70,10 +71,15 @@ docker run --rm -e SETUP="true" \
 ```
 
 ## Deploy storj node
-Prepare compose
+Checkout storj-node stack for new node
 ```
+cd ~
 rm /mnt/node01/config.yaml
-cp -r storj-nodeXX storj-node01
+svn checkout https://github.com/tomaae/storj-deployment.git/trunk/storj-nodeXX storj-node01
+```
+
+Edit stack configuration:
+```
 sed -i 's/XX/01/g' ./storj-node01/.env
 ```
 
@@ -96,7 +102,13 @@ docker compose up -d
 ```
 
 # Grafana deployment
-Edit storj-ui/.env
+Checkout storj-ui stack
+```
+cd ~
+svn checkout https://github.com/tomaae/storj-deployment.git/trunk/storj-ui
+```
+
+Edit stack configuration storj-ui/.env
 ```
 PROMETHEUS_MOUNT=<ui mount pointmount point>/prometheus
 GRAFANA_MOUNT=<ui mount point>/grafana
