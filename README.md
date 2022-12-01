@@ -1,5 +1,6 @@
 # storj-deployment
 Full compose multinode deployment for storj-node with exporters and grafana.
+This implementation aims to gather all available information in single place and make deployment as simple as possible.
 
 ## Deployment example
 UI
