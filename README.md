@@ -147,3 +147,35 @@ Import grafana dashboard:
 
 https://raw.githubusercontent.com/tomaae/storj-deployment/main/storj-ui/dashboard_exporter_combined.json
 
+# multinode deployment
+Optionally, if you want to also deploy official multinode
+
+Generate identity for multinode:
+```
+cd ~
+./identity create multinode --difficulty 10
+```
+
+Deploy docker image:
+```
+docker run -d --restart unless-stopped \
+    --user $(id -u):$(id -g) \
+    -p 10000:15002/tcp \
+    --network storj-bridge
+    --mount type=bind,source="/root/.local/share/storj/identity/multinode/ca.key",destination=/app/identity \
+    --mount type=bind,source="/mnt/multinode",destination=/app/config \
+    --name storj-multinode storjlabs/multinode:latest
+```
+
+Issue API key:
+```
+docker exec -it storj-node01 ./storagenode issue-apikey --identity-dir /app/identity --config-dir /app/config --log.output stderr
+```
+*Change node01 to appropriate node number*
+
+multinode UI will be available on port 10000
+When importing new nodes, use internal network addresses instead of public:
+```
+Public IP Address:
+storj-node01:28967
+```
