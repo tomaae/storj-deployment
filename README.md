@@ -125,6 +125,8 @@ GRAFANA_MOUNT=<ui mount point>/grafana
 GF_SECURITY_ADMIN_PASSWORD=<password>
 GF_USERS_ALLOW_SIGN_UP=false
 GF_INSTALL_PLUGINS=yesoreyeram-boomtable-panel
+
+DOCKER_HOST_HOSTNAME=<docker host fqdn>
 ```
 
 Edit storj-ui/prometheus.yml, append block for each node, replace XX with node ID

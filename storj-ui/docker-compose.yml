@@ -27,12 +27,40 @@ services:
     volumes:
       - ${GRAFANA_MOUNT}:/var/lib/grafana
       - ./grafana/provisioning/:/etc/grafana/provisioning/
-      - ./dashboard_exporter_combined.json:/etc/grafana/provisioning/dashboards/dashboard_exporter_combined.json
+        #- ./dashboard_exporter_combined.json:/etc/grafana/provisioning/dashboards/dashboard_exporter_combined.json
     environment:
       - GF_SECURITY_ADMIN_PASSWORD
       - GF_USERS_ALLOW_SIGN_UP
       - GF_INSTALL_PLUGINS
     restart: "unless-stopped"
+
+  nginx:
+    image: nginx:latest
+    container_name: "storj-nginx"
+    restart: "unless-stopped"
+    networks:
+      - "storj-bridge"
+    ports:
+        - "80:80"
+    volumes:
+        - ./web:/web
+        - ./nginx/site.conf:/etc/nginx/conf.d/default.conf
+
+  php:
+    image: php:8-fpm
+    container_name: "storj-php"
+    restart: "unless-stopped"
+    user: "0:0"
+    command: php-fpm -R
+    networks:
+      - "storj-bridge"
+    environment:
+      - DOCKER_HOST_HOSTNAME
+    volumes:
+      - ./web:/web
+      - ./php/www.conf:/usr/local/etc/php-fpm.d/www.conf
+      - /var/run/docker.sock:/var/run/docker.sock
+
 
 networks:
   storj-bridge:
