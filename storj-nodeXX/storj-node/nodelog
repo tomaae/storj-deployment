@@ -1,8 +1,0 @@
-/app/config/node.log {
-    rotate 7
-    daily
-    copytruncate
-    compress
-    missingok
-    notifempty
-}
