@@ -22,7 +22,6 @@ services:
       - "${NODE_MNT}:/app/config"
       - "${NODE_IDENTITY}:/app/identity"
       - "./storj-node/config.yaml:/app/config/config.yaml"
-      - "./storj-node/nodelog:/etc/logrotate.d/nodelog"
 
   watchtower:
     container_name: "storj-watchtower${NODE_ID}"
@@ -37,6 +36,22 @@ services:
     restart: "unless-stopped"
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock"
+
+  logrotate:
+    depends_on:
+      - storj-node
+    container_name: "storj-logrotate${NODE_ID}"
+    environment:
+      - LOGROTATE_FILE_PATTERN=node.log
+      - LOGROTATE_ROTATE=0
+      - LOGROTATE_SIZE=0
+      - LOGROTATE_CRON=0 0 * * *
+    image: "linkyard/logrotate:latest"
+    restart: "unless-stopped"
+    networks:
+      - "storj-bridge"
+    volumes:
+      - "${NODE_MNT}:/logs"
 
   storj-exporter:
     depends_on:
