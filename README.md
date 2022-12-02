@@ -6,7 +6,7 @@ This implementation aims to gather all available information in single place and
 ## Deployment example
 Grafana
 
-![UI](https://user-images.githubusercontent.com/23486452/205275220-93b5ffc1-c819-4ff6-8274-e48dc697ff49.png)
+![UI](https://user-images.githubusercontent.com/23486452/205275880-9988144a-d639-4ceb-bd09-af7f8cc8691f.png)
 
 List of web interfaces
 
