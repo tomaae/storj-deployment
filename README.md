@@ -4,21 +4,26 @@ Full compose multinode deployment for storj-node with exporters and grafana.
 This implementation aims to gather all available information in single place and make deployment as simple as possible.
 
 ## Deployment example
-UI
+Grafana
 
-![UI](https://user-images.githubusercontent.com/23486452/204962205-8b505289-96b8-4e36-96ee-efa6da232a6b.png)
+![UI](https://user-images.githubusercontent.com/23486452/205275220-93b5ffc1-c819-4ff6-8274-e48dc697ff49.png)
+
+List of web interfaces
+
+![UI List](https://user-images.githubusercontent.com/23486452/205275296-3524e3db-f525-4d6b-818e-08e2646a51fe.png)
 
 storj-node stack
 
-![storj-node stack](https://user-images.githubusercontent.com/23486452/204962751-053a1569-d5f5-46c5-ba09-adae46478fa6.png)
+![storj-node stack](https://user-images.githubusercontent.com/23486452/205275465-39f29074-6b33-412d-b4e0-8c9678e09f12.png)
 
 storj-ui stack
 
-![storj-ui stack](https://user-images.githubusercontent.com/23486452/204962782-7c99ee01-1c15-4b78-b339-d2b60f52e05a.png)
+![storj-ui stack](https://user-images.githubusercontent.com/23486452/205275530-d2e18160-2909-4f4f-9eb7-ea859280a95a.png)
 
 Portainer
 
-![image](https://user-images.githubusercontent.com/23486452/204962666-96150bbc-0f1c-453e-9387-06a6ad298973.png)
+![Docker](https://user-images.githubusercontent.com/23486452/205275612-7faa28e9-57e2-4b1e-a0b9-7d2a2d3fc65a.png)
+
 
 
 ## Per node compose deployment
