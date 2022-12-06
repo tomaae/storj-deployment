@@ -35,12 +35,21 @@ Portainer
 * storj updater
 * running on shared dedicated internal network
 
+## Other
+* docker host OS monitoring
+* prometheus + grafana configuration
+* grafana storj and host os monitoring graphs
+* simple webside for host displaying all available storj web interfaces
+* storj multinode optional deployment
+
 ## Credits
 Implementation includes following:
 * https://github.com/storj/storj
 * https://github.com/anclrii/Storj-Exporter
 * https://github.com/anclrii/Storj-Exporter-dashboard
 * https://github.com/kevinkk525/storj-log-exporter
+* https://github.com/prometheus/node_exporter
+* https://github.com/rfmoz/grafana-dashboards
 
 
 # Prepare for deployment
@@ -171,8 +180,6 @@ docker compose up -d
 Edit storj-ui/prometheus.yml, append block for each host, replace XX with host ID
 ```
   - job_name: storj-hostXX
-    scrape_interval: 60s
-    scrape_timeout: 20s
     static_configs:
     - targets: ['host-exporterXX:9100']
       labels:
