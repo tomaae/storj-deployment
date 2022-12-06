@@ -21,8 +21,6 @@ scrape_configs:
   # The job name is added as a label `job=<job_name>` to any timeseries scraped from this config.
 
 #  - job_name: storj-hostXX
-#    scrape_interval: 60s
-#    scrape_timeout: 20s
 #    static_configs:
 #    - targets: ['host-exporterXX:9100']
 #      labels:
