@@ -4,9 +4,13 @@ Full compose multinode deployment for storj-node with exporters and grafana.
 This implementation aims to gather all available information in single place and make deployment as simple as possible.
 
 ## Deployment example
-Grafana
+Grafana storj
 
 ![UI](https://user-images.githubusercontent.com/23486452/205275880-9988144a-d639-4ceb-bd09-af7f8cc8691f.png)
+
+Grafana host
+
+![UI](https://user-images.githubusercontent.com/23486452/205954349-b92ebb7d-f02d-459b-96ff-fb10d4c5a2e6.png)
 
 List of web interfaces
 
