@@ -8,6 +8,8 @@ services:
     networks:
       - "storj-bridge"
     pid: host
+    ports:
+      - 91${HOST_ID}:9100/tcp
     restart: unless-stopped
     volumes:
       - '/:/host:ro,rslave'
