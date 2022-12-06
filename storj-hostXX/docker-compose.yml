@@ -1,0 +1,17 @@
+version: "3.8"
+services:
+  node_exporter:
+    image: quay.io/prometheus/node-exporter:latest
+    container_name: host-exporter${HOST_ID}
+    command:
+      - '--path.rootfs=/host'
+    networks:
+      - "storj-bridge"
+    pid: host
+    restart: unless-stopped
+    volumes:
+      - '/:/host:ro,rslave'
+
+networks:
+  storj-bridge:
+    name: "storj-bridge"
