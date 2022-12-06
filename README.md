@@ -156,6 +156,41 @@ Import grafana dashboard:
 
 https://raw.githubusercontent.com/tomaae/storj-deployment/main/storj-ui/dashboard_exporter_combined.json
 
+# Deploy docker host statistics
+Optionally, if you want docker host statistics
+
+Checkout storj-host stack
+```
+cd ~
+svn checkout https://github.com/tomaae/storj-deployment.git/trunk/storj-hostXX storj-host01
+sed -i 's/XX/01/g' ./storj-host01/.env
+cd storj-host01
+docker compose up -d
+```
+
+Edit storj-ui/prometheus.yml, append block for each host, replace XX with host ID
+```
+  - job_name: storj-hostXX
+    scrape_interval: 60s
+    scrape_timeout: 20s
+    static_configs:
+    - targets: ['host-exporterXX:9100']
+      labels:
+        instance: "hostXX"
+```
+
+Deploy updated storj-ui
+```
+cd storj-ui
+docker compose down
+docker compose up -d
+```
+
+Import grafana dashboard:
+
+https://raw.githubusercontent.com/tomaae/storj-deployment/main/storj-ui/node-exporter-full.json
+
+
 # multinode deployment
 Optionally, if you want to also deploy official multinode
 
