@@ -179,6 +179,8 @@ If you want docker host statistics, deploy for each docker host
 Checkout storj-host stack
 ```
 cd ~
+mkdir -p /mnt/exporter/prometheus /mnt/exporter/grafana
+chown 777 /mnt/exporter/prometheus /mnt/exporter/grafana
 svn checkout https://github.com/tomaae/storj-deployment.git/trunk/storj-hostXX storj-host01
 sed -i 's/XX/01/g' ./storj-host01/.env
 cd storj-host01
