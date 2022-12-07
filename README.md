@@ -169,8 +169,8 @@ Import grafana dashboard:
 
 https://raw.githubusercontent.com/tomaae/storj-deployment/main/storj-ui/dashboard_exporter_combined.json
 
-# Deploy docker host statistics
-Optionally, if you want docker host statistics
+# (Optional) Deploy docker host statistics
+If you want docker host statistics
 
 Checkout storj-host stack
 ```
@@ -202,8 +202,8 @@ Import grafana dashboard:
 https://raw.githubusercontent.com/tomaae/storj-deployment/main/storj-ui/node-exporter-full.json
 
 
-# multinode deployment
-Optionally, if you want to also deploy official multinode
+# (Optional) multinode deployment
+If you want to also deploy official multinode
 
 Generate identity for multinode:
 ```
