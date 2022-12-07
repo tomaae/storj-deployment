@@ -6,11 +6,11 @@ This implementation aims to gather all available information in single place and
 ## Deployment example
 Grafana storj
 
-![UI](https://user-images.githubusercontent.com/23486452/205275880-9988144a-d639-4ceb-bd09-af7f8cc8691f.png)
+![UI](https://user-images.githubusercontent.com/23486452/206063260-b472fdf0-bc39-4ed4-a1b2-dafa934a8733.png)
 
 Grafana host
 
-![UI](https://user-images.githubusercontent.com/23486452/205954349-b92ebb7d-f02d-459b-96ff-fb10d4c5a2e6.png)
+![UI](https://user-images.githubusercontent.com/23486452/206063367-0df86143-a420-45a5-946f-c77544d51c57.png)
 
 List of web interfaces
 
