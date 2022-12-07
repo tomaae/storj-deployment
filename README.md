@@ -28,6 +28,7 @@ Portainer
 
 ![Docker](https://user-images.githubusercontent.com/23486452/205275612-7faa28e9-57e2-4b1e-a0b9-7d2a2d3fc65a.png)
 
+*Portainer is not included in this deployment guide*
 
 
 ## Per node compose deployment
