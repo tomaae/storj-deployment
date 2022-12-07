@@ -57,6 +57,7 @@ Implementation includes following:
 
 
 # Prepare for deployment
+This is one time step to build a docker image we will use in node deployment.
 
 ## Build storj-log-exporter docker image
 ```
@@ -129,6 +130,8 @@ docker compose up -d
 ```
 
 # Grafana deployment
+One time deployment
+
 Checkout storj-ui stack
 ```
 cd ~
@@ -170,7 +173,7 @@ Import grafana dashboard:
 https://raw.githubusercontent.com/tomaae/storj-deployment/main/storj-ui/dashboard_exporter_combined.json
 
 # (Optional) Deploy docker host statistics
-If you want docker host statistics
+If you want docker host statistics, deploy for each docker host
 
 Checkout storj-host stack
 ```
@@ -203,7 +206,7 @@ https://raw.githubusercontent.com/tomaae/storj-deployment/main/storj-ui/node-exp
 
 
 # (Optional) multinode deployment
-If you want to also deploy official multinode
+One time deployment if you want to also deploy official multinode
 
 Generate identity for multinode:
 ```
