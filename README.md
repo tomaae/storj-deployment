@@ -47,6 +47,9 @@ Portainer
 * simple webside for host displaying all available storj web interfaces
 * storj multinode optional deployment
 
+## Tutorial
+[![Tutorial](https://user-images.githubusercontent.com/23486452/206584124-81c8a3c5-0302-49bd-a1e9-5eab22f88808.png)](https://www.youtube.com/watch?v=7C2mGGZkcMk)
+
 ## Credits
 Implementation includes following:
 * https://github.com/storj/storj
