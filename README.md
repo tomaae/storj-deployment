@@ -44,7 +44,7 @@ Portainer
 * docker host OS monitoring
 * prometheus + grafana configuration
 * grafana storj and host os monitoring graphs
-* simple webside for host displaying all available storj web interfaces
+* simple website for host displaying all available storj web interfaces
 * storj multinode optional deployment
 
 ## Tutorial
